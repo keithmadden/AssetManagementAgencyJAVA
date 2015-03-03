@@ -93,8 +93,6 @@ public class DemoApp {
         }
     }
     
-
-    
     private static void deleteCustomer(Scanner keyboard, Model m) {
     System.out.println("Enter the ID of the customer to delete:");
     int id = Integer.parseInt(keyboard.nextLine());
@@ -113,8 +111,6 @@ public class DemoApp {
         System.out.println("Customer not found");
     }
     }
-    
-    
     
     private static void viewCustomers(Model model) {
         List<Customer> customers = model.getCustomers();

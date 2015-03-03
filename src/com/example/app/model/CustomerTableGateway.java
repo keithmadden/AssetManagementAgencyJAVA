@@ -22,6 +22,7 @@ public class CustomerTableGateway {
     public CustomerTableGateway(Connection connection) {
         mConnection = connection;
     }
+    
     public List<Customer> getCustomers() throws SQLException {
         String query;       // the SQL query to execute
         Statement stmt;     // the java.sql.Statement object used to execute the
@@ -97,13 +98,12 @@ public class CustomerTableGateway {
         return id;
     }
     
-    
     public boolean deleteCustomer(int id) throws SQLException {
     String query;
     PreparedStatement stmt;
     int numRowsAffected;
 
-    query = "DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = ?";
+    query = "DELETE FROM " + TABLE_NAME + " WHERE `" + COLUMN_ID + "` = ?";
 
     stmt = mConnection.prepareStatement(query);
     stmt.setInt(1, id);
@@ -112,20 +112,17 @@ public class CustomerTableGateway {
     return (numRowsAffected == 1);
     }
     
-    
     public boolean updateCustomer(Customer c) throws SQLException {
         String query;
         PreparedStatement stmt;
         int numRowsAffected;
 
         query = "UPDATE " + TABLE_NAME + " SET "
-            + COLUMN_NAME      + " = ?, "
-            + COLUMN_ADDRESS + " = ?, "
-            + COLUMN_MOBILE  + " = ?, "
-            + COLUMN_EMAIL   + " = ? "
-            + "WHERE `" + COLUMN_ID + "` = ?";
-
-        System.out.println(query);
+                + COLUMN_NAME      + " = ?, "
+                + COLUMN_ADDRESS + " = ?, "
+                + COLUMN_MOBILE  + " = ?, "
+                + COLUMN_EMAIL   + " = ? "
+                + " WHERE `" + COLUMN_ID + "` = ?";
         
         stmt = mConnection.prepareStatement(query);
         stmt.setString(1, c.getName());

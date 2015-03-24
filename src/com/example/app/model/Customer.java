@@ -7,17 +7,19 @@ public class Customer {
     private String address;
     private String mobile;
     private String email;
+    private int branchId;
 
-    public Customer(int id, String n, String a, String m, String e) {
+    public Customer(int id, String n, String a, String m, String e, int branchId) {
         this.id = id;
         this.name = n;
         this.address = a;
         this.mobile = m;
         this.email = e;
+        this.branchId = branchId;
     }
     
-    public Customer(String n, String a, String m, String e) {
-        this(-1, n, a, m, e);
+    public Customer(String n, String a, String m, String e, int branchId) {
+        this(-1, n, a, m, e, branchId);
     }
 
     public int getId() {
@@ -27,7 +29,7 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-
+    
     public String getName() {
         return name;
     }
@@ -59,5 +61,14 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(int branchId) {
+        this.branchId = branchId;
+    }
+    
 
 }

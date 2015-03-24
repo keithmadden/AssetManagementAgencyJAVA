@@ -129,7 +129,7 @@ public class BranchTableGateway {
         stmt.setString(2, b.getPhone());
         stmt.setString(3, b.getManager());
         stmt.setString(4, b.getHours());
-        stmt.setInt(5, b.getId());
+        stmt.setInt(5, b.getBranchId());
         
         numRowsAffected = stmt.executeUpdate();
 

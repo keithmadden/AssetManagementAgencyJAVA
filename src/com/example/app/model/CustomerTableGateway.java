@@ -15,6 +15,7 @@ public class CustomerTableGateway {
     private static final String COLUMN_ADDRESS = "Address";
     private static final String COLUMN_EMAIL = "Email";
     private static final String COLUMN_MOBILE = "Mobile";
+    private static final String COLUMN_BRANCH_ID = "branch_id";
 
     private Connection mConnection;
     private List<Customer> customers;
@@ -36,6 +37,7 @@ public class CustomerTableGateway {
         String address; 
         String email;
         String mobile;
+        int branchId;
         Customer cus; // a Programmer object created from a row in the result of
                             // the query
 
@@ -55,8 +57,9 @@ public class CustomerTableGateway {
             address = c.getString(COLUMN_ADDRESS);
             email = c.getString(COLUMN_MOBILE);
             mobile = c.getString(COLUMN_EMAIL);
+            branchId = c.getInt(COLUMN_BRANCH_ID);
 
-            cus = new Customer(id, name, address, email, mobile);
+            cus = new Customer(id, name, address, email, mobile, branchId);
             customers.add(cus);
 
         }

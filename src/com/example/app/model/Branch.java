@@ -20,11 +20,11 @@ public class Branch {
         this(-1, a, p, m, h);
     }
 
-    public int getId() {
+    public int getBranchId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setBranchId(int id) {
         this.id = id;
     }
 
@@ -59,5 +59,6 @@ public class Branch {
     public void setHours(String hours) {
         this.hours = hours;
     }
+
 
 }
